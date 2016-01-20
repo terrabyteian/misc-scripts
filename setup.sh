@@ -77,5 +77,9 @@ run_cmd "python get-pip.py"
 pipinstall virtualenv
 pipinstall virtualenvwrapper
 
+# Setup fail2ban
+run_cmd "rpm -Uvh http://dl.fedoraproject.org/pub/epel/6/x86_64/epel-release-6-8.noarch.rpm"
+yuminstall fail2ban
+service fail2ban restart
 
 printf "\n\nView detailed output in $LOG\n"
